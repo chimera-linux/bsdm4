@@ -21,12 +21,6 @@ all: $(PROGRAM)
 .c.o:
 	$(CC) -c -o $@ $< $(EXTRA_CFLAGS) $(CFLAGS)
 
-.y.o:
-	$(YACC) -o $@ $<
-
-.l.o:
-	$(LEX) -o $@ $<
-
 parser.c: parser.y
 	$(YACC) -H parser.h -o parser.c parser.y
 
