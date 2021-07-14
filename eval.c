@@ -89,6 +89,9 @@ static long long strtonum(
         }
         return 0;
     }
+    if (errstr) {
+        *errstr = NULL;
+    }
     return ret;
 }
 
